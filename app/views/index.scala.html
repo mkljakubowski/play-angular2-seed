@@ -1,0 +1,39 @@
+@()
+
+@import controllers.routes.Assets
+
+<html>
+    <head>
+        <title>Angular 2 QuickStart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="@Assets.at("lib/es6-shim/es6-shim.min.js")"></script>
+        <script src="@Assets.at("lib/systemjs/dist/system-polyfills.js")"></script>
+        <script src="@Assets.at("lib/angular2/es6/dev/src/testing/shims_for_IE.js")"></script>
+
+        <script src="@Assets.at("lib/angular2/bundles/angular2-polyfills.js")"></script>
+        <script src="@Assets.at("lib/systemjs/dist/system.src.js")"></script>
+        <script src="@Assets.at("lib/rxjs/bundles/Rx.js")"></script>
+        <script src="@Assets.at("lib/angular2/bundles/angular2.dev.js")"></script>
+
+        <script>
+                System.config({
+                    defaultJSExtensions: true,
+                    packages: {
+                        app: {
+                            format: 'register'
+                        }
+                    },
+                    "paths": {
+                        "angular2/*": "assets/lib/angular2/*",
+                        "rxjs/*": "assets/lib/rxjs/*"
+                    }
+                });
+                System.import('assets/app/main').then(null, console.error.bind(console));
+        </script>
+    </head>
+
+    <body>
+        <my-app>Loading...</my-app>
+    </body>
+</html>
